@@ -1,10 +1,8 @@
 const About = () => {
   return (
-    <div>
-      <h1>About Us Page</h1>
-      <p>
-        Finding the Path 🚀
-      </p>
+    <div className="about-container">
+      <h1 className="about-title">About Us Page</h1>
+      <p className="about-text">Finding the Path 🚀</p>
     </div>
   );
 };
