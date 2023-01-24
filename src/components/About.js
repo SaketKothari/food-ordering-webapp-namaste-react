@@ -1,4 +1,4 @@
-import ProfileFunctionalComponet from './Profile';
+import Profile from './ProfileClass';
 import { Component } from 'react';
 
 class About extends Component {
@@ -17,7 +17,7 @@ class About extends Component {
       <div className="about-container">
         <h1 className="about-title">About Us Page</h1>
         <p className="about-text">Class Based Component 🚀</p>
-        <ProfileFunctionalComponet />
+        <Profile />
       </div>
     );
   }
