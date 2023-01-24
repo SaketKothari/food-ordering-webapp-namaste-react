@@ -4,6 +4,7 @@ import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import { filterData } from '../utils/helper';
 import useOnline from '../utils/useOnline';
+import { FETCH_RESTAURANT_URL } from '../constant';
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -16,11 +17,9 @@ const Body = () => {
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch(
-      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING'
-    );
+    const data = await fetch(FETCH_RESTAURANT_URL);
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     // Optional Chaining
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
