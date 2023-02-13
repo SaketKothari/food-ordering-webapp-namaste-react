@@ -9,17 +9,30 @@ import Contact from './components/Contact';
 import RestaurantMenu from './components/RestaurantMenu';
 import Profile from './components/Profile';
 import Shimmer from './components/Shimmer';
+import UserContext from './utils/context/UserContext';
 
 // Lazy Loading
 const Instamart = lazy(() => import('./components/Instamart'));
 const About = lazy(() => import('./components/About'));
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: 'Saket Kothari',
+    email: 'sk@dev.com',
+  });
+
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider
+        value={{
+          user: user,
+          setUser: setUser,
+        }}
+      >
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </>
   );
 };
