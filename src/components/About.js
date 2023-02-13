@@ -1,5 +1,6 @@
 import Profile from './ProfileClass';
 import { Component } from 'react';
+import UserContext from '../utils/context/UserContext';
 
 class About extends Component {
   constructor(props) {
@@ -16,6 +17,13 @@ class About extends Component {
     return (
       <div className="about-container">
         <h1 className="about-title">About Us Page</h1>
+        <UserContext.Consumer>
+          {({ user }) => (
+            <h4 className="font-bold text-xl p-10">
+              {user.name}- {user.email}
+            </h4>
+          )}
+        </UserContext.Consumer>
         <p className="about-text">Class Based Component 🚀</p>
         <Profile />
       </div>
