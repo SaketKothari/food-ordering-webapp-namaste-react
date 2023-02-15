@@ -12,7 +12,7 @@ const loggedInUser = () => {
 
 const Title = () => (
   <a href="/">
-    <img className="h-28 p-2" alt="logo" src={Logo} />
+    <img data-testid="logo" className="h-28 p-2" alt="logo" src={Logo} />
   </a>
 );
 
@@ -38,14 +38,16 @@ const Header = () => {
             <li className="px-2">Contact</li>
           </Link>
           <Link to="/cart">
-            <li className="px-2">Cart- {cartItems.length} items</li>
+            <li className="px-2" data-testid="cart">
+              Cart- {cartItems.length} items
+            </li>
           </Link>
           <Link to="/instamart">
             <li className="px-2">Instamart</li>
           </Link>
         </ul>
       </div>
-      <h1>{isOnline ? '✅' : '🔴'}</h1>
+      <h1 data-testid="online-status">{isOnline ? '✅' : '🔴'}</h1>
       <span className="p-10 font-bold text-red-900">{user.name}</span>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>

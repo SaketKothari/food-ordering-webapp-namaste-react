@@ -44,3 +44,4 @@ Thumbs.db
 *.wmv
 
 .parcel-cache
+/coverage

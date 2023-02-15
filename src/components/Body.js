@@ -36,6 +36,7 @@ const Body = () => {
       <div className="search-container p-5 bg-pink-50 my-5">
         <input
           type="text"
+          data-testid="search-input"
           className="focus:bg-green-200 p-2 m-2"
           placeholder="Search"
           value={searchText}
@@ -44,6 +45,7 @@ const Body = () => {
           }}
         />
         <button
+          data-testid="search-btn"
           className="p-2 m-2 bg-purple-900 hover:bg-gray-500 text-white rounded-md"
           onClick={() => {
             // need to filter the data
@@ -73,7 +75,7 @@ const Body = () => {
           }
         />
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap" data-testid="res-list">
         {/* You have to write logic for NO restraunt fount here */}
         {filteredRestaurants.map((restaurant) => {
           return (
